@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Bookings</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #f12711, #f5af19);
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 95%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background: #222;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+        button {
+            display: block;
+            margin: 30px auto 0;
+            background: red;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h2>🎟️ All Bookings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Movie</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Persons</th>
+                <th>Seats</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking[0] }}</td>
+                <td>{{ booking[1] }}</td>
+                <td>{{ booking[2] }}</td>
+                <td>{{ booking[3] }}</td>
+                <td>{{ booking[4] }}</td>
+                <td>{{ booking[5] }}</td>
+                <td>{{ booking[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form action="{{ url_for('clear_bookings') }}" method="POST" onsubmit="return confirm('Are you sure? This will delete ALL bookings.')">
+        <button type="submit">🗑 Clear All Bookings</button>
+    </form>
+
+    <!-- Existing confirmation details -->
+
+<a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+
+</body>
+</html>
