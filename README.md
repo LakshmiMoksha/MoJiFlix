@@ -9,13 +9,17 @@ The application includes an integrated pricing model, dynamic seat mapping, and 
 # Tech Stack
 
 *Frontend*: HTML5, CSS3, Bootstrap
+
 *Backend*: Flask (Python), Jinja2
+
 *Database*: SQLite
+
 *Deployment*: Render (or any Flask-supported hosting)
 
 ---
 
-#Features
+# Features
+
 *Movie Selection*
 
 - Displays available movies with posters and titles
